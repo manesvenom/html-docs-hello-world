@@ -20,9 +20,7 @@ steps:
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
-    ConnectedServiceName: ---
+    azureSubscription: 'Azure 訂用帳戶 1(d37b6bbd-629e-47cd-98f9-8e0846c824af)'
     appType: 'webApp'
     WebAppName: 'venomtest'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    enableCustomDeployment: true
-    DeploymentType: 'webDeploy'
