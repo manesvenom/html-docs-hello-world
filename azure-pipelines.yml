@@ -20,6 +20,7 @@ steps:
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
+    ConnectedServiceName: ---
     appType: 'webApp'
     WebAppName: 'venomtest'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
