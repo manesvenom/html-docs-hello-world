@@ -10,17 +10,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-- task: AzureRmWebAppDeployment@4
+- task: AzureStaticWebApp@0
   inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure 訂用帳戶 1(d37b6bbd-629e-47cd-98f9-8e0846c824af)'
-    appType: 'webApp'
-    WebAppName: 'venomtest'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+   app_location: ""
+   output_location: "wwwroot"
+  env:
+    azure_static_web_apps_api_token: $(deployment_token)
+
